@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:600,400italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="styled.css">
+	<title>todos</title>
+</head>
+<body>
+	<!-- Main Container -->
+	<h1>todos</h1>
+	<div id= "todo">
+		<!-- Input task and Select all -->
+		<section id="header">
+			<div>
+				<input type="checkbox" value="None" class="selectAll" name="check" />
+				<label for="selectAll"></label>
+				<input type="text" placeholder="What needs to be done?" id="taskInput" autofocus/>
+			</div>
+		</section>
+		<!-- Tasks and Template for tasks -->
+		<section id="content">
+			<script type="text/x-handlebars-template" id="template">
+				<li data-status ="{{status}}" class = "{{className}}" id = "{{id}}">
+					<input type="checkbox" class = "check" data-action="check"/>
+					<label for "check"></label>
+					<p>{{task}}</p>
+					<button data-action="delete" class = "delete"> </button>
+				</li>   
+			</script>
+			<ul id="tasks">
+				
+			</ul>
+		</section>
+		<!-- Footer -->
+		<section id="footer" class="hidden">
+			<ul id ="footerList">
+				<li><p id="leftItems"></p></li>
+				<li><button data-btn="all" class="current">All</button></li>
+				<li><button data-btn="active">Active</button></li>
+				<li><button data-btn="completed">Completed</button></li>
+				<li><button id="clear" class = "hidden" data-btn="clear">Clear Completed</button></li>
+			</ul>
+
+		</section>
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/handlebars.js"></script>
+<script type="text/javascript" src="js/model.js"></script>
+<script type="text/javascript" src="js/view.js"></script>
+<script type="text/javascript" src="js/controller.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
+</html>
